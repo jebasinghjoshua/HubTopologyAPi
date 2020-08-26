@@ -1,0 +1,232 @@
+[
+  {
+    "Id": 1,
+    "ResourceDetail": {
+      "AppServerVirtualMachine": {
+        "State": 0,
+        "VmSize": null,
+        "DiskSizeGB": null,
+        "OsSizeGB": null,
+        "Environment": null,
+        "CustomerID": null,
+        "Purpose": null,
+        "Scheduled_Downtime": null,
+        "Schedule": null,
+        "Name": "UE2POC38APP01",
+        "ResourceGroup": "ue2-poc-38-app-01-rg",
+        "Location": null,
+        "Type": null,
+        "TenantId": null
+      },
+      "DbServerVirtualMachine": {
+        "State": 0,
+        "VmSize": null,
+        "DiskSizeGB": null,
+        "OsSizeGB": null,
+        "Environment": null,
+        "CustomerID": null,
+        "Purpose": null,
+        "Scheduled_Downtime": null,
+        "Schedule": null,
+        "Name": "UE2POC38DATA01",
+        "ResourceGroup": "ue2-poc-38-data-01-rg",
+        "Location": null,
+        "Type": null,
+        "TenantId": null
+      },
+      "OctopusVirtualMachine": {
+        "State": 0,
+        "VmSize": null,
+        "DiskSizeGB": null,
+        "OsSizeGB": null,
+        "Environment": null,
+        "CustomerID": null,
+        "Purpose": null,
+        "Scheduled_Downtime": null,
+        "Schedule": null,
+        "Name": "UE2POC38OCT01",
+        "ResourceGroup": "ue2-poc-38-oct-01-rg",
+        "Location": null,
+        "Type": null,
+        "TenantId": null
+      },
+      "InsightsVirtualMachine": {
+        "State": 0,
+        "VmSize": null,
+        "DiskSizeGB": null,
+        "OsSizeGB": null,
+        "Environment": null,
+        "CustomerID": null,
+        "Purpose": null,
+        "Scheduled_Downtime": null,
+        "Schedule": null,
+        "Name": "UE2POC38DATAI01",
+        "ResourceGroup": "ue2-poc-38-data-01-rg",
+        "Location": null,
+        "Type": null,
+        "TenantId": null
+      },
+      "ProducerVirtualMachine": {
+        "State": 0,
+        "VmSize": null,
+        "DiskSizeGB": null,
+        "OsSizeGB": null,
+        "Environment": null,
+        "CustomerID": null,
+        "Purpose": null,
+        "Scheduled_Downtime": null,
+        "Schedule": null,
+        "Name": "UE2POC38CC01",
+        "ResourceGroup": "ue2-poc-38-cc-01-rg",
+        "Location": null,
+        "Type": null,
+        "TenantId": null
+      },
+      "SeachService": {
+        "SkuName": null,
+        "Status": null,
+        "PublicNetworkAccess": null,
+        "Name": "ue2poc38ss01",
+        "ResourceGroup": "ue2-poc-38-service-search-01-rg",
+        "Location": null,
+        "Type": null,
+        "TenantId": null
+      },
+      "ServiceBus": {
+        "SkuName": null,
+        "SkuTier": null,
+        "Status": null,
+        "Endpoint": null,
+        "Name": "UE2-POC-38-SERVICEHUB01",
+        "ResourceGroup": "ue2-poc-38-servicehub01-rg",
+        "Location": null,
+        "Type": null,
+        "TenantId": null
+      },
+      "VirtualNetwork": {
+        "AddressPrefix": null,
+        "Name": "UE2-POC-38-VNET",
+        "ResourceGroup": "ue2-poc-38-vnet-01-rg",
+        "Location": null,
+        "Type": null,
+        "TenantId": null
+      }
+    }
+  },
+  {
+    "Id": 2,
+    "ResourceDetail": {
+      "AppServerVirtualMachine": {
+        "State": 0,
+        "VmSize": null,
+        "DiskSizeGB": null,
+        "OsSizeGB": null,
+        "Environment": null,
+        "CustomerID": null,
+        "Purpose": null,
+        "Scheduled_Downtime": null,
+        "Schedule": null,
+        "Name": "UE2POC38APP01",
+        "ResourceGroup": "ue2-poc-38-app-01-rg",
+        "Location": null,
+        "Type": null,
+        "TenantId": null
+      },
+      "DbServerVirtualMachine": {
+        "State": 0,
+        "VmSize": null,
+        "DiskSizeGB": null,
+        "OsSizeGB": null,
+        "Environment": null,
+        "CustomerID": null,
+        "Purpose": null,
+        "Scheduled_Downtime": null,
+        "Schedule": null,
+        "Name": "UE2POC38DATA01",
+        "ResourceGroup": "ue2-poc-38-data-01-rg",
+        "Location": null,
+        "Type": null,
+        "TenantId": null
+      },
+      "OctopusVirtualMachine": {
+        "State": 0,
+        "VmSize": null,
+        "DiskSizeGB": null,
+        "OsSizeGB": null,
+        "Environment": null,
+        "CustomerID": null,
+        "Purpose": null,
+        "Scheduled_Downtime": null,
+        "Schedule": null,
+        "Name": "UE2POC38OCT01",
+        "ResourceGroup": "ue2-poc-38-oct-01-rg",
+        "Location": null,
+        "Type": null,
+        "TenantId": null
+      },
+      "InsightsVirtualMachine": {
+        "State": 0,
+        "VmSize": null,
+        "DiskSizeGB": null,
+        "OsSizeGB": null,
+        "Environment": null,
+        "CustomerID": null,
+        "Purpose": null,
+        "Scheduled_Downtime": null,
+        "Schedule": null,
+        "Name": "UE2POC38DATAI01",
+        "ResourceGroup": "ue2-poc-38-data-01-rg",
+        "Location": null,
+        "Type": null,
+        "TenantId": null
+      },
+      "ProducerVirtualMachine": {
+        "State": 0,
+        "VmSize": null,
+        "DiskSizeGB": null,
+        "OsSizeGB": null,
+        "Environment": null,
+        "CustomerID": null,
+        "Purpose": null,
+        "Scheduled_Downtime": null,
+        "Schedule": null,
+        "Name": "UE2POC38CC01",
+        "ResourceGroup": "ue2-poc-38-cc-01-rg",
+        "Location": null,
+        "Type": null,
+        "TenantId": null
+      },
+      "SeachService": {
+        "SkuName": null,
+        "Status": null,
+        "PublicNetworkAccess": null,
+        "Name": "ue2poc38ss01",
+        "ResourceGroup": "ue2-poc-38-service-search-01-rg",
+        "Location": null,
+        "Type": null,
+        "TenantId": null
+      },
+      "ServiceBus": {
+        "SkuName": null,
+        "SkuTier": null,
+        "Status": null,
+        "Endpoint": null,
+        "Name": "UE2-POC-38-SERVICEHUB01",
+        "ResourceGroup": "ue2-poc-38-servicehub01-rg",
+        "Location": null,
+        "Type": null,
+        "TenantId": null
+      },
+      "VirtualNetwork": {
+        "AddressPrefix": null,
+        "Name": "UE2-POC-38-VNET",
+        "ResourceGroup": "ue2-poc-38-vnet-01-rg",
+        "Location": null,
+        "Type": null,
+        "TenantId": null
+      }
+    }
+  }
+]
+
+
