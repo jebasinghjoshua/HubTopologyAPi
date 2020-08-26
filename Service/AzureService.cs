@@ -154,9 +154,9 @@ namespace HubTopology_API.Service
             return resourceDetailModel;
         }
 
-        public async Task<bool> StartAzureVm(string name, string resourceGroup, string action)
+        public async Task<bool> StartAzureVm(string name, string resourceGroup)
         {
-            var restCall = new Uri($"https://management.azure.com/subscriptions/resourceGroups/{resourceGroup}/providers/Microsoft.Compute/virtualMachines/{name}/{action}?api-version=2019-07-01");
+            var restCall = new Uri($"https://management.azure.com/subscriptions/{_subscription.AzureId}/resourceGroups/{resourceGroup}/providers/Microsoft.Compute/virtualMachines/{name}/start?api-version=2019-07-01");
             var response = await Send(restCall, HttpMethod.Post, _subscription);
             if (response.StatusCode == HttpStatusCode.Accepted)
             {

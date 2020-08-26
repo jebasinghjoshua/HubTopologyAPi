@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 namespace HubTopology_API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]/{id}")]
     public class ResourceDetailController : ControllerBase
     {
         private readonly AzureService _azureService;
@@ -23,6 +22,8 @@ namespace HubTopology_API.Controllers
             _clientData = JsonSerializer.Deserialize<Client[]>(json);
         }
 
+
+        [Route("api/[controller]/{id}")]
         [HttpGet]
         public async Task<ResourceDetailModel> Get(int id)
         {
@@ -31,19 +32,10 @@ namespace HubTopology_API.Controllers
             return await _azureService.GetStatus(resource.ResourceDetail, CancellationToken.None);
         }
 
+
+        [Route("api/[controller]")]
         [HttpPost]
-        public async Task<bool> StartStopResource([FromQuery] string name, string resourceGroup, string action = null)
-        {
-            if (action == null) action = "start";
-            return await _azureService.StartAzureVm(name, resourceGroup, action);
+        public async Task<bool> StartResource([FromQuery] string name, string resourceGroup) => await _azureService.StartAzureVm(name, resourceGroup);
 
-        }
-
-        //[HttpGet(nameof(GetStatus))]
-        //public async Task<ResourceDetailModel> GetStatus(ResourceDetailModel resourceDetail)
-        //{
-        //  return await _azureService.GetStatus(resourceDetail, CancellationToken.None);
-
-        //}
     }
 }
