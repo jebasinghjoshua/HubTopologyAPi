@@ -13,6 +13,11 @@ namespace HubTopology_API.Model
         public AzureServiceBus ServiceBus { get; set; }
         public VirtualNetwork VirtualNetwork { get; set; }
         public Product Claims { get; set; }
+        public Product Billing { get; set; }
+        public Product Policy { get; set; }
+        public Product Party { get; set; }
+        public Product Insights { get; set; }
+        public Product Producer { get; set; }
     }
 
     public class Product
