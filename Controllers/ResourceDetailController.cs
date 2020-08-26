@@ -21,7 +21,6 @@ namespace HubTopology_API.Controllers
       string json = System.IO.File.ReadAllText("Data/Client.json");
       // get requested client data
       _clientData = JsonSerializer.Deserialize<Client[]>(json);
-      
     }
 
     [HttpGet]
