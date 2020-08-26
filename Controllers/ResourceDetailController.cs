@@ -17,7 +17,7 @@ namespace HubTopology_API.Controllers
     public ResourceDetailController(AzureService azureService)
     {
       _azureService = azureService;
-      //load all data
+      //load all data - Latest
       string json = System.IO.File.ReadAllText("Data/Client.json");
       // get requested client data
       _clientData = JsonSerializer.Deserialize<Client[]>(json);
