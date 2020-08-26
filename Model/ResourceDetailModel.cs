@@ -56,7 +56,6 @@ namespace HubTopology_API.Model
 
     public class AzureSearchService : Resource
     {
-
         public void UpdateDetail(ResourceDetailTable resourceDetailTable)
         {
             Update(resourceDetailTable);
