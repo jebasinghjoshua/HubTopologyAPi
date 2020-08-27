@@ -119,7 +119,6 @@ namespace HubTopology_API.Service
             if (resourceDetailModel.AppServerVirtualMachine != null && !string.IsNullOrEmpty(resourceDetailModel.AppServerVirtualMachine.Name) && result.Any(x => x.name == resourceDetailModel.AppServerVirtualMachine.Name))
             {
                 resourceDetailModel.AppServerVirtualMachine.UpdateDetail(result.Where(x => x.name == resourceDetailModel.AppServerVirtualMachine.Name).FirstOrDefault());
-                resourceDetailModel.Claims = resourceDetailModel.Billing = resourceDetailModel.Policy = resourceDetailModel.Party = new Product { State = resourceDetailModel.AppServerVirtualMachine.State };
             }
             if (resourceDetailModel.DbServerVirtualMachine != null && !string.IsNullOrEmpty(resourceDetailModel.DbServerVirtualMachine.Name) && result.Any(x => x.name == resourceDetailModel.DbServerVirtualMachine.Name))
             {
@@ -132,12 +131,10 @@ namespace HubTopology_API.Service
             if (resourceDetailModel.InsightsVirtualMachine != null && !string.IsNullOrEmpty(resourceDetailModel.InsightsVirtualMachine.Name) && result.Any(x => x.name == resourceDetailModel.InsightsVirtualMachine.Name))
             {
                 resourceDetailModel.InsightsVirtualMachine.UpdateDetail(result.Where(x => x.name == resourceDetailModel.InsightsVirtualMachine.Name).FirstOrDefault());
-                resourceDetailModel.Insights = new Product { State = resourceDetailModel.InsightsVirtualMachine.State };
             }
             if (resourceDetailModel.ProducerVirtualMachine != null && !string.IsNullOrEmpty(resourceDetailModel.ProducerVirtualMachine.Name) && result.Any(x => x.name == resourceDetailModel.ProducerVirtualMachine.Name))
             {
                 resourceDetailModel.ProducerVirtualMachine.UpdateDetail(result.Where(x => x.name == resourceDetailModel.ProducerVirtualMachine.Name).FirstOrDefault());
-                resourceDetailModel.Producer = new Product { State = resourceDetailModel.ProducerVirtualMachine.State };
             }
             if (resourceDetailModel.VirtualNetwork != null && !string.IsNullOrEmpty(resourceDetailModel.VirtualNetwork.Name) && result.Any(x => x.name == resourceDetailModel.VirtualNetwork.Name))
             {
@@ -151,6 +148,20 @@ namespace HubTopology_API.Service
             {
                 resourceDetailModel.SeachService.UpdateDetail(result.Where(x => x.name == resourceDetailModel.SeachService.Name).FirstOrDefault());
             }
+
+            //Resurce Update
+            if(resourceDetailModel.AppServerVirtualMachine != null && resourceDetailModel.DbServerVirtualMachine != null) {
+                resourceDetailModel.Claims = resourceDetailModel.Billing = resourceDetailModel.Policy = resourceDetailModel.Party = new Product { State = getState(resourceDetailModel.AppServerVirtualMachine.State, resourceDetailModel.DbServerVirtualMachine.State) };
+            }
+            if (resourceDetailModel.InsightsVirtualMachine != null && resourceDetailModel.InsightsVirtualMachine.ResourceGroup !="" && resourceDetailModel.AppServerVirtualMachine != null)
+            {
+                resourceDetailModel.Insights = new Product { State = getState(resourceDetailModel.InsightsVirtualMachine.State, resourceDetailModel.AppServerVirtualMachine.State) };
+            }
+            if (resourceDetailModel.ProducerVirtualMachine != null && resourceDetailModel.ProducerVirtualMachine.ResourceGroup != "" && resourceDetailModel.DbServerVirtualMachine != null)
+            {
+                resourceDetailModel.Producer = new Product { State = getState(resourceDetailModel.ProducerVirtualMachine.State, resourceDetailModel.DbServerVirtualMachine.State) };
+            }
+
             return resourceDetailModel;
         }
 
@@ -273,6 +284,13 @@ namespace HubTopology_API.Service
 
             return System.Text.Json.JsonSerializer.Deserialize<ResourceDetailTable[]>(dtResult);
 
+        }
+        private State getState(State appServer, State dbServer)
+        {
+            if (appServer == State.Running && dbServer == State.Running)
+                return State.Running;
+            else
+                return State.Stopped;
         }
     }
 }
